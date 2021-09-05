@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Latest events</h2>
+    <div class="row">
+        {% for event in events %}
+
+
+
+
+
+            <div class="col-4">          
+                <div class="card mt-5" style="width: 18rem;">
+                <img class="card-img-top" src="{{ event.image }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.name }}</h5>
+                        <p class="card-text">{{ event.DateTime|date('F j, Y, g:i a') }}</p>
+                        <a href="/edit/{{ event.id }}" class="btn btn-success">Edit</a>
+                        <a href="/details/{{ event.id }}" class="btn btn-primary">Details</a>
+                        <a href="/delete/{{ event.id }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

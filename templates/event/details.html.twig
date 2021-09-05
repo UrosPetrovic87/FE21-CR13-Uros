@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container d-flex justify-content-center"
+
+
+<div class="card" style="width: 24rem;">
+<img class="card-img-top" src="{{events.image}}">
+                    <div class="card-body text center">
+                        <h2 class="card-title">{{ events.name }}</h2>
+                        <p class="card-text">Date: {{ events.DateTime|date('F j, Y, g:i a') }}<br>
+                        Url: {{ events.url }}<br>
+                        Email: {{ events.email }}<br>
+                        Phone: {{ events.phone }}<br>
+                        Address: {{ events.address }}<br>
+                        Capacity: {{ events.capacity }}<br>
+                        Description: {{ events.description }}
+                        </p>
+                        <a href="/edit/{{ events.id }}" class="btn btn-success">Edit</a>
+                        <a href="/delete/{{ events.id }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+             </div>
+
+{% endblock %}
